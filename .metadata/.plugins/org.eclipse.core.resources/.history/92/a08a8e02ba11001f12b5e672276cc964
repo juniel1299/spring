@@ -1,0 +1,27 @@
+package com.test.begin.aop;
+
+public class Main {
+public static void main(String[] args) {
+	
+	//주 업무 객체  > MemoImpl
+	MemoImpl memo = new MemoImpl();
+	int result = 0;
+	//글쓰기
+	memo.add("스프링 작업 중입니다.");
+	
+	String content;
+	try {
+		content = memo.read(5);
+		System.out.println(content);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	//수정
+	boolean edit = memo.edit(15, "수정할 내용입니다");
+	
+	result = memo.del(15);
+	
+}
+}

@@ -178,7 +178,7 @@ Spring DI
 
 **** 스프링 환경에서는 클래스의 객체(Bean, 빈)를 생성~관리~소멸까지를
 	1. 개발자가 직접
-	2. 스프링이 조작 > 스프링 환경 설정 파일(XML, Java)
+	2. 스프링이 조작 > 스프링 환경 설정 파일(XML > Annotation > Java)
 	
 						
 - src/test/java > "com.test.begin.di3"
@@ -190,6 +190,46 @@ Spring AOP, Aspect Oriented Programming
 - 코드를 작성 > 주업무 코드 + 보조업무 코드
 
 
+
+Spring AOP 용어
+1. Core Concern
+	- 주업무, 비즈니즈 코드
+
+2. Cross-cutting Concern
+	- 보조업무	
+
+3. Target
+
+4. Proxy
+
+5. JointPoint
+
+6. Pointcut
+
+7. Aspect
+
+8. Advice
+	
+	- Before Advice
+	- After Advice
+	- Around Advice
+	
+	- After-returning Advice
+	- After-throwing Advice
+
+
+메모장
+- "com.test.begin.aop"
+	- "Main.java"			//메인
+	- "Memo.java"(I)		//메인 업무 객체(인터페이스)
+	- "MemoImpl.java"(C)	//구현체
+	
+	- "Logger.java"(C)		//보조 업무 개체(클래스)
+	
+	- "memo.xml"			//스프링 설정 파일
+
+
+Spring Core > DI, AOP
 
 
 

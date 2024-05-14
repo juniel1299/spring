@@ -1,0 +1,9 @@
+package com.test.begin.aop;
+
+public class Main {
+public static void main(String[] args) {
+	
+	//ÁÖ ¾÷¹« °´Ã¼  > MemoImpl
+	MemoImpl memo = new MemoImpl();
+}
+}

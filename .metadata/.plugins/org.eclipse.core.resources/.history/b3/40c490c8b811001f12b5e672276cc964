@@ -1,0 +1,9 @@
+package com.test.begin.aop;
+
+public class MemoImpl {
+	
+	public void add(String memo) {
+		
+	}
+	
+}
