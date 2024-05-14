@@ -1,0 +1,15 @@
+package com.test.begin.di3;
+
+public class Hong {
+	
+	public void coding() {
+		System.out.println("코드를 작성합니다.");
+	}
+
+	//Hong 객체 생성하기
+	//1. 개발자가 직접 생성
+	//Hong hong new Hong();
+	
+	//2. 스프링을 ㄹ통해서 생성 > 빈 생성 
+	// - di3.xml 
+}

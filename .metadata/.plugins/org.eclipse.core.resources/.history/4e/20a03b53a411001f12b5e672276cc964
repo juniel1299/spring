@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="..." class="...">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="..." class="...">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+
+<!-- 스프링 빈 , 스프링이라는 환경이 관리하는 객체 
+	스프링 빈 선언(정의)
+	Hong hong = new Hong();
+-->
+
+
+
+
+
+
+<bean id="hong" class="com.test.begin.di3.Hong"></bean>
+<bean id="service" class="com.test.begin.di3.Service"></bean>
+<!--
+<bean class="com.test.begin.di2.Hong"></bean>
+<bean class="com.test.begin.di1.Hong"></bean>
+-->
+
+
+
+</beans>
+
+
+
