@@ -1,0 +1,31 @@
+package com.test.begin.di2;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+//		Hong hong = new Hong();
+//		
+//		Service service = new Service(hong);
+//		service.work();
+		
+		
+		
+		//Hong 객체 생성하기
+		//1. 개발자가 직접 생성
+		//Hong hong = new Hong();
+		
+		//2. 스프링을 통해서 생성 > 빈 생성
+		
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
