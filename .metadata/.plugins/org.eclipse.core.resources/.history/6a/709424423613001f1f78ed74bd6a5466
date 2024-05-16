@@ -1,0 +1,68 @@
+package com.test.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class Ex06Controller {
+
+	@GetMapping(value = "/add.do")
+	public String add() {
+
+		return "add";
+	}
+	/*
+	 * @PostMapping(value="/addok.do") public String addok(HttpServletRequest req)
+	 * throws UnsupportedEncodingException {
+	 * 
+	 * req.setCharacterEncoding("UTF-8"); String num = req.getParameter("num");
+	 * 
+	 * //ModelAndView mv;
+	 * 
+	 * req.setAttribute("num", num);
+	 * 
+	 * return "addok"; }
+	 */
+	// 스프링에서는 요청 메서드에게 넘어오는 대부분의 데이터를 매개 변수 형태로 받는다.
+//	@PostMapping("/addok.do")
+//	public String addok(@RequestParam("num") String num) {
+//		
+//		System.out.println(num);
+//		
+//		
+//		return "addok";
+//	}
+
+//	@PostMapping("/addok.do")
+//	public String addok(String num, Model model) {
+//
+//		System.out.println(num);
+//
+//		//ModelAndView
+//		
+//		model.addAttribute("num",num);
+//		
+//		
+//		return "addok";
+//
+//	}
+
+	@PostMapping("/addok.do")
+	public String addok(String num, Model model) {
+
+		System.out.println(num);
+
+		//ModelAndView
+		
+		model.addAttribute("num",num);
+		
+		
+		return "addok";
+
+	}
+	
+	
+	
+}

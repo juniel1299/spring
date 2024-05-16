@@ -1,0 +1,14 @@
+package com.test.web.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class Ex06Controller {
+
+
+	@GetMapping(value="/add.do")
+	public String add() {
+		return "add";
+	}
+	
+}

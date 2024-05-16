@@ -1,0 +1,25 @@
+package com.test.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class Ex06Controller {
+
+
+	@GetMapping(value="/add.do")
+	public String add() {
+	
+		return "add";
+	}
+	
+	@PostMapping(value="/addok.do")
+	public String addok() {
+		
+		return "addok";
+	
+	}
+	
+	
+}

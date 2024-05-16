@@ -1,0 +1,10 @@
+package com.test.web.controller;
+@Controller
+public class Ex06Controller {
+
+
+	public String add() {
+		return "add";
+	}
+	
+}

@@ -1,0 +1,50 @@
+package com.test.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class Ex08Controller {
+
+	//1. String
+	//- JSP 파일 경로
+	//- ViewResolver 호출
+//	@GetMapping("/ex08.do")
+//	public String ex08() {
+//		
+//		return "ex08";
+//	}
+	
+	//2. void
+	@GetMapping("/ex08.do")
+	public void ex08() {
+		
+		System.out.println("페이지 호출");
+		
+	
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
