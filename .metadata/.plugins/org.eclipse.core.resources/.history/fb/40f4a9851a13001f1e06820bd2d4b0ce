@@ -1,0 +1,21 @@
+package com.test.web.controller;
+
+//JSP Model2(MVC 패턴)
+//- Controller > 클라이언트 요청 + 흐름 통제 > Java 서블릿
+//- View > 반환할 뷰 페이지 작성 > JSP 페이지
+//- Model > 데이터 처리 + 이동
+
+//이전 수업 > Servlet 역할
+
+public class Ex01Controller {
+
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+
+스프링 + 웹 프로젝트 > Spring MVC Project
+
+1. 새 프로젝트
+- Project name: "WebTest"
+- Templates: Spring MVC Project
+- Enter a topLevelPackage: "com.test.web"
+
+2. 스프링/자바 버전 변경하기
+- pom.xml
+- <org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+- <java-version>11</java-version>
+- <source>11</source>
+  <target>11</target>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
