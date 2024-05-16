@@ -1,5 +1,7 @@
 package com.test.web.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -57,17 +59,44 @@ public class Ex08Controller {
 //		return name;
 //	}
 	
+//	@GetMapping("/ex08.do")
+//	public @ResponseBody AddressDTO ex08() {
+//		
+//		AddressDTO dto = new AddressDTO();
+//		dto.setName("홍길동");
+//		dto.setAge(20);
+//		dto.setAddress("서울시");
+//		
+//		return dto;
+//	}
+	
+//	@GetMapping("/ex08.do")
+//	public @ResponseBody List<String> ex08() {
+//		
+//		List list = List.of("홍길동", "아무개", "하하하", "호호호", "후후후");
+//		
+//		return list;
+//	}
+
 	@GetMapping("/ex08.do")
-	public @ResponseBody AddressDTO ex08() {
+	public @ResponseBody ArrayList<AddressDTO> ex08() {
 		
 		AddressDTO dto = new AddressDTO();
 		dto.setName("홍길동");
 		dto.setAge(20);
-		dto.setAddress("서울");
+		dto.setAddress("서울시");
 		
-		return dto;
+		AddressDTO dto2 = new AddressDTO();
+		dto2.setName("아무개");
+		dto2.setAge(22);
+		dto2.setAddress("부산시");
+		
+		ArrayList<AddressDTO> list = new ArrayList<AddressDTO>();
+		list.add(dto);
+		list.add(dto2);
+		
+		return list;
 	}
-	
 }
 
 
