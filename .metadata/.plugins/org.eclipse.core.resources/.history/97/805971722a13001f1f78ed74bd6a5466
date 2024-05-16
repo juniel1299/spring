@@ -1,0 +1,16 @@
+package com.test.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping(value="/ex05.do")
+public class Ex05Controller {
+	
+	@RequestMapping
+	public String test() {
+		
+	}
+
+	
+}

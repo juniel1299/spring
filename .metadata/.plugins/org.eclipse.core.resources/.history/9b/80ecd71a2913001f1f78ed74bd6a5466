@@ -1,0 +1,10 @@
+package com.test.web.controller;
+
+
+// 컨트롤러 구현 
+// 1. Controller 인터페이스 구현
+// 2. 어노테이션 사용 
+
+public class Ex04Controller {
+
+}
