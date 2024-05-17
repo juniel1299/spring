@@ -17,24 +17,41 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class DBCPTest {
 	
 	//<bean> 획득
-	
 	@Autowired
 	private DataSource dataSource;
 	
 	@Test
 	public void testConnection() {
-	
+		
 		assertNotNull(dataSource);
-	
-	try {
 		
-		Connection conn = dataSource.getConnection();
+		try {
+			
+			Connection conn = dataSource.getConnection();
+						
+			System.out.println(conn.isClosed()); //false
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		System.out.println(conn.isClosed());
-		
-	} catch (Exception e) {
-		// TODO: handle exception
 	}
-	
-	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

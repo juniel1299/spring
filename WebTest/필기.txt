@@ -67,8 +67,83 @@
 - ModelAndView 사용
 
 
+- com.test.web.controller > "Ex02Controller.java"
+- views > "ex02.jsp"
+- ModelAndView 사용
 
 
+- com.test.web.controller > "Ex03Controller.java"
+- views > "ex03.jsp"
+- "com.test.web.dao" > "BoardDAO.java"
+- ModelAndView 사용
+- 의존 주입(XML 사용)
+
+
+
+- com.test.web.controller > "Ex04Controller.java"
+- views > "ex04.jsp"
+- 어노테이션을 사용한 컨트롤러 구현
+- 기본 구조
+
+
+
+- com.test.web.controller > "Ex05Controller.java"
+- views > "ex05.jsp"
+- views > "add.jsp"
+- views > "addok.jsp"
+- 어노테이션을 사용한 컨트롤러 구현
+- 주소 관리
+
+
+
+
+- com.test.web.controller > "Ex06Controller.java"
+- "com.test.web.dto" > "AddressDTO.java"
+- views > "ex06.jsp"
+- 요청 메서드의 파라미터 처리(***)
+- web.xml > 인코딩 필터 등록
+
+
+
+-  com.test.web
+-  com.test.web.controller
+- "com.test.controller" > "Ex07Controller.java"
+- views > "ex07.jsp"
+
+
+
+- "com.test.web.controller" > "Ex08Controller.java"
+- views > "ex08.jsp"
+- 요청 메서드의 반환값
+
+
+
+- "com.test.web.controller" > "Ex09Controller.java"
+- views > "ex09.jsp"
+
+- "com.test.web.exception" > "CommonExceptionAdvice.java"
+
+- 예외 처리 > 주로 500번대 에러(서버측)
+
+
+
+인터페이스 역할
+- "com.test.web.connect"
+	- "Main.java" > 메인 클래스
+	- "Service.java" > 업무 클래스
+	- "Hong.java" > 기능 클래스
+	- "Lee.java"  > 기능 클래스
+	- "Worker.java"(I)
+	
+	
+	
+- com.test.web.controller > "Ex10Controller.java"
+- "com.test.web.service" > "BoardService.java"
+                         > "DataService.java"(I)
+                         > "MemoService.java"
+                         
+- views > "ex10.jsp"
+- 의존 주입
 
 
 
