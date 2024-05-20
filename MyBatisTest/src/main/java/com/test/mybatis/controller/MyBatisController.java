@@ -176,6 +176,97 @@ public class MyBatisController {
 		
 		return "list";		
 	}
+	
+	@GetMapping("/m11.do")
+	public String m11(Model model, String gender) {
+		
+		//MyBatis + 동적쿼리
+		//- SQL 작성 + 제어(JSTL과 유사)
+		//- 동적으로 상황에 따른 SQL 작성할 수 있는 기능
+		
+		//if문
+		//- 주로 where절의 일부를 조작할 때 많이 사용한다.
+		
+		//- m11.do?gender=m
+		//- m11.do?gender=f
+				
+		List<MyBatisDTO> list = dao.m11(gender);
+		
+		model.addAttribute("list", list);		
+		
+		return "result";
+	}
+	
+	@GetMapping("/m12.do")
+	public String m12(Model model, String gender) {
+		
+		//gender 유/무
+		//- m12.do?gender=m
+		//- m12.do?gender=f
+		//- m12.do
+		
+		//Cause: java.sql.SQLException: 실행할 SQL 문은 비어 있거나 널일 수 없음
+		
+		List<MyBatisDTO> list = dao.m12(gender);
+		
+		model.addAttribute("list", list);	
+		
+		return "result";
+	}
+	
+	@GetMapping("/m13.do")
+	public String m13(Model model, MyBatisDTO dto) {
+		
+		//gender or address 조건으로 사용
+		//- m13.do?gender=m
+		//- m13.do?address=강동구
+		//- m13.do?gender=f&address=강남구
+		//- m13.do
+		List<MyBatisDTO> list = dao.m13(dto);
+		
+		model.addAttribute("list", list);	
+		
+		return "result";
+	}
+	
+	@GetMapping("/m14.do")
+	public String m14(Model model, Integer type) {
+		
+		//- m14.do?type=1 > select name, age
+		//- m14.do?type=2 > select name, gender, address
+		//- m14.do        > select *
+				
+		List<MyBatisDTO> list = dao.m14(type);
+		
+		model.addAttribute("list", list);	
+		
+		return "result";
+	}
+	
+	@GetMapping("/m15.do")
+	public String m15(Model model, String column, String word) {
+		
+		//검색
+		//- m15.do?column=컬럼명&word=검색어
+		
+		//- m15.do?column=name&word=강아지	> 동등 비교
+		//- m15.do?column=gender&word=m		> 동등 비교
+		//- m15.do?column=seq&word=3		> 동등 비교
+		
+		//- m15.do?column=age&word=2		> 우위 비교
+		
+		//- m15.do?column=address&word=강동	> 패턴 비교
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("column", column);
+		map.put("word", word);
+		
+		List<MyBatisDTO> list = dao.m15(map);
+		
+		model.addAttribute("list", list);
+		
+		return "result";
+	}
 
 }
 

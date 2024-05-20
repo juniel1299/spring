@@ -38,7 +38,7 @@
 		select name from tblAddress
 	</select>
 	
-	<select id="m7" resultType="com.test.mybatis.dto.MyBatisDTO">
+	<select id="m7" resultType="dto">
 		select * from tblAddress
 	</select>
 	
@@ -77,6 +77,135 @@
 			search > "%' or 1=1 or ''='%"
 			where address like '%%' or 1=1 or ''='%%' 
 			-->
+	</select>
+	
+	<select id="m11" resultType="dto" parameterType="String">
+		<!-- 
+		select
+			*
+		from tblAddress
+			where gender = #{gender}
+			order by seq asc 
+		-->
+		
+		<if test="gender == 'm'.toString()">
+		select
+			*
+		from tblAddress
+			where gender = 'm'
+				order by seq asc
+		</if>
+
+		<if test='gender == "f"'>
+		select
+			*
+		from tblAddress
+			where gender = 'f'
+				order by seq asc				
+		</if>
+		
+		<if test='gender == null'>
+		select
+			*
+		from tblAddress
+				order by seq asc				
+		</if>
+		
+	</select>
+	
+	<select id="m12" resultType="dto" parameterType="String">
+	
+		<!-- 
+		select
+			*
+		from tblAddress
+			<if test="gender != null">
+			where gender = #{gender}
+			</if>
+				order by seq asc	 
+		-->
+		
+		select
+			*
+		from tblAddress
+			where age >= 3
+			<if test="gender != null">
+			and gender = #{gender}
+			</if>
+				order by seq asc	
+	
+	</select>
+	
+	<select id="m13" resultType="dto" parameterType="dto">
+	
+		<!-- 
+		<if test="gender == null and address == null">
+		select * from tblAddress
+		</if>
+		
+		<if test="gender != null and address == null">
+		select * from tblAddress
+			where gender = #{gender}
+		</if>
+		
+		<if test="gender == null and address != null">
+		select * from tblAddress
+			where address like '%' || #{address} || '%'	
+		</if>
+		
+		<if test="gender != null and address != null">
+		select * from tblAddress
+			where gender = #{gender} and address like '%' || #{address} || '%'	
+		</if> 
+		-->
+		
+		<!-- 
+		select * from tblAddress
+			where
+			 	<if test="gender != null">
+				gender = #{gender} 
+				</if>
+				
+				<if test="address != null">
+				and address like '%' || #{address} || '%'
+				</if>	 
+		-->
+		
+		select * from tblAddress
+			where
+				1 = 1
+			
+			 	<if test="gender != null">
+				and gender = #{gender} 
+				</if>
+				
+				<if test="address != null">
+				and address like '%' || #{address} || '%'
+				</if>
+		
+	</select>
+	
+	<select id="m14" resultType="dto" parameterType="Integer">
+	
+		select
+			<if test="type == 1">
+			name, age
+			</if>
+			<if test="type == 2">
+			name, gender, address
+			</if>
+			<if test="type == null">
+			*
+			</if>
+		from tblAddress
+	
+	</select>
+	
+	<select id="m15" resultType="dto" parameterType="map">
+	
+		select * from tblAddress
+			where ${column} = #{word}
+	
 	</select>
 	
 </mapper>

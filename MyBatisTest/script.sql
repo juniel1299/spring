@@ -8,13 +8,14 @@ create table tblAddress (
     gender char(1) not null
 );
 
+drop sequence seqAddress;
 create sequence seqAddress;
 
 insert into tblAddress values (seqAddress.nextVal, '홍길동', 20, '서울시', 'm');
 
+delete from tblAddress where seq < 9;
+
 select * from tblAddress;
 
-
-
-
+commit;
 
