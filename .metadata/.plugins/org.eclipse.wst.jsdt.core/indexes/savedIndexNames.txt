@@ -6,4 +6,3 @@ INDEX VERSION 1.4+C:\class\code\spring\.metadata\.plugins\org.eclipse.wst.jsdt.c
 3271193799.index
 985413812.index
 908877845.index
-2100776696.index

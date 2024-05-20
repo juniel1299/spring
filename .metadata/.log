@@ -12112,3 +12112,9 @@ java.lang.ClassCastException: class org.eclipse.jdt.internal.corext.fix.LinkedPr
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2024-05-20 17:29:35.125
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-05-20 17:57:56.680
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-05-20 17:57:56.681
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
