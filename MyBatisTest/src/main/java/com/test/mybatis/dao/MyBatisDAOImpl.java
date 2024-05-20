@@ -173,6 +173,25 @@ public class MyBatisDAOImpl implements MyBatisDAO {
 		return template.selectList("mybatis.m15", map);
 	}
 	
+	@Override
+	public List<MyBatisDTO> m16(MyBatisDTO dto) {
+		// TODO Auto-generated method stub
+		return template.selectList("mybatis.m16",dto);
+	}
+	
+	@Override
+	public void m17(MyBatisDTO dto) {
+		// TODO Auto-generated method stub
+		
+		template.update("mybatis.m17",dto);
+		
+	}
+	
+	@Override
+	public List<MyBatisDTO> m18(List<String> name) {
+		// TODO Auto-generated method stub
+		return template.selectList("mybatis.m18",name);
+	}
 }
 
 

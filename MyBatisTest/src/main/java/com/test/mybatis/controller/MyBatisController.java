@@ -1,5 +1,6 @@
 package com.test.mybatis.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.test.mybatis.dao.MyBatisDAO;
 import com.test.mybatis.dto.MyBatisDTO;
@@ -268,6 +270,65 @@ public class MyBatisController {
 		return "result";
 	}
 
+	@GetMapping("/m16.do")
+	public String m16(Model model, MyBatisDTO dto) {
+		
+		
+		//1개 이상의 조건 검색 
+		
+		// m16.do?seq=1
+		// m16.do?name=강아지
+		// m16.do?gender=m&age=3
+		// m16.do?gender=m&age=3*address=강남구
+		
+		//where 태그는 콘텐츠의 내용 중 'and' , 'or' 시작하면 그 'and' 와 'or'을 자동으로 삭제 해준다. (문맥에 맞춰서)
+		
+		List<MyBatisDTO> list = dao.m16(dto);
+		
+		model.addAttribute("list", list);
+	
+		return "result";
+	}
+	
+
+	@GetMapping("/m17.do")
+	public String m17(Model model, MyBatisDTO dto) {
+		
+		// <set> 수정할 때
+		// update tbladdress set 
+		
+		// m17.do?seq=1&gender=f
+		// m17.do?seq=1&age=5
+		// m17.do?seq=1&address=서울시 강남구 역삼동 우체국 빌딩&age=6
+		
+		
+	dao.m17(dto);
+		
+		model.addAttribute("list", new ArrayList<MyBatisDTO>());
+		
+		return "result";
+		
+	}
+
+
+
+	@GetMapping("/m18.do")
+	public String m18(Model model, @RequestParam("name") List<String> name) {
+
+		//반복문
+		// m18.do
+		// m18.do?name=강아지
+		// m18.do?name=강아지&name=고양이&name=타조
+		
+		//System.out.println(name);
+		
+		List<MyBatisDTO> list = dao.m18(name);
+		
+		
+		
+		return "result";	
+	}
+	
 }
 
 
