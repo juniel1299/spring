@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Logging"/>
+		<item key="selection" value="Path"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="path"/>
+			<item value="3.1"/>
+			<item value="javax"/>
+			<item value="1.6"/>
+			<item value="4.7"/>
+			<item value="serv"/>
+			<item value="target"/>
+			<item value="memo"/>
 			<item value="logger"/>
 			<item value="logging"/>
 			<item value="log4j"/>
@@ -15,14 +23,6 @@
 			<item value="log"/>
 			<item value="dbcp"/>
 			<item value="lom1"/>
-			<item value="junit"/>
-			<item value="test"/>
-			<item value="lom"/>
-			<item value="servlet"/>
-			<item value="1.6"/>
-			<item value="driver"/>
-			<item value="driverclass"/>
-			<item value="hika"/>
 		</list>
 		<list key="replacehistory">
 		</list>
