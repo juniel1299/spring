@@ -19,24 +19,53 @@ select * from tblAddress;
 
 commit;
 
-create table tblUser(
+
+
+insert into tblAddress values (seqAddress.nextVal, '강아지', 3, '서울시 강남구 역삼동 한독빌딩 8층', 'm');
+insert into tblAddress values (seqAddress.nextVal, '고양이', 2, '서울시 강남구 역삼동 한독빌딩 3층', 'f');
+insert into tblAddress values (seqAddress.nextVal, '병아리', 1, '서울시 강남구 역삼동 한독빌딩 2층', 'f');
+insert into tblAddress values (seqAddress.nextVal, '사자', 7, '서울시 강남구 대치동', 'm');
+insert into tblAddress values (seqAddress.nextVal, '호랑이', 6, '서울시 강남구 압구정동', 'f');
+insert into tblAddress values (seqAddress.nextVal, '비둘기', 3, '서울시 강동구 천호동', 'f');
+insert into tblAddress values (seqAddress.nextVal, '타조', 4, '서울시 강동구 암사동', 'm');
+insert into tblAddress values (seqAddress.nextVal, '햄스터', 1, '서울시 강북구 우이동', 'm');
+insert into tblAddress values (seqAddress.nextVal, '낙타', 5, '서울시 강북구 번동', 'm');
+insert into tblAddress values (seqAddress.nextVal, '독수리', 3, '서울시 강북구 미아동', 'm');
+
+
+
+
+
+
+
+
+create table tblUser (
     seq number primary key,
     name varchar2(30) not null
-    );
-    
-    create sequence seqUser;
-    
-    create table tblDetail(
+);
+
+create sequence seqUser;
+
+create table tblDetail (
     seq number primary key,
     email varchar2(100) not null,
     user_seq number not null references tblUser(seq)
-    );
-    
-    create sequence seqDetail;
-    
-    
-    commit;
-    create table tblInfo (
+);
+
+create sequence seqDetail;
+
+
+
+
+
+select * from tblUser;
+
+
+
+
+
+
+create table tblInfo (
 	seq number,
 	school varchar2(100) not null,
 	country varchar2(100) not null,
@@ -58,6 +87,7 @@ create table tblMemo (
 	aseq number not null references tblAddress(seq) 
 );
 
+drop sequence seqMemo;
 create sequence seqMemo;
 
 insert into tblMemo values (seqMemo.nextVal, '안녕하세요.', default, 1);
@@ -73,22 +103,25 @@ insert into tblMemo values (seqMemo.nextVal, '하늘을 날다.', default, 9);
 insert into tblMemo values (seqMemo.nextVal, '집이 좁아요.', default, 8);
 
 
---tblAddress : tblInfo
--- 1:1 관계
+commit;
 
---tblAddress : tblMemo
--- 1 : N
+-- tblAddress : tblInfo
+-- 1 : 1 > join
 
---tbladdress
+-- tblAddress : tblMemo
+-- 1 : N > join
+
+-- tblAddress
 select * from tblAddress;
 
---tblInfo
+-- tblInfo
 select * from tblInfo;
 
 -- tblMemo
 select * from tblMemo;
 
-select * from tblAddress a inner join tblInfo i on a.seq = i.seq;
 
 
-commit;
+
+
+

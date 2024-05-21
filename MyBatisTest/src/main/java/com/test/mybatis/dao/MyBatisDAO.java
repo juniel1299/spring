@@ -58,6 +58,8 @@ public interface MyBatisDAO {
 
 	List<AddressDTO> m21();
 
+	List<AddressDTO> m22();
+
 }
 
 

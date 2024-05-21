@@ -9,7 +9,8 @@ import lombok.ToString;
 @ToString
 public class InfoDTO {
 
-	private String seq; //PK + FK 
+	private String seq; 	//PK + FK
 	private String school;
 	private String country;
+	
 }

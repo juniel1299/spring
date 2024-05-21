@@ -179,64 +179,65 @@ public class MyBatisDAOImpl implements MyBatisDAO {
 	
 	@Override
 	public List<MyBatisDTO> m16(MyBatisDTO dto) {
-		// TODO Auto-generated method stub
-		return template.selectList("mybatis.m16",dto);
+		
+		return template.selectList("mybatis.m16", dto);
 	}
 	
 	@Override
 	public void m17(MyBatisDTO dto) {
-		// TODO Auto-generated method stub
 		
-		template.update("mybatis.m17",dto);
-		
+		template.update("mybatis.m17", dto);
 	}
 	
 	@Override
 	public List<MyBatisDTO> m18(List<String> name) {
-		// TODO Auto-generated method stub
-		return template.selectList("mybatis.m18",name);
+		
+		return template.selectList("mybatis.m18", name);
 	}
 	
 	@Override
 	public void addUser(UserDTO udto) {
-		// TODO Auto-generated method stub
-		
-		template.insert("mybatis.addUser",udto);
+	
+		template.insert("mybatis.addUser", udto);
 	}
 	
 	@Override
 	public void addDetail(DetailDTO ddto) {
-		// TODO Auto-generated method stub
-		template.insert("mybatis.addDetail",ddto);
+		
+		template.insert("mybatis.addDetail", ddto);
 	}
 	
 	@Override
 	public String getSeq() {
-		// TODO Auto-generated method stub
+		
 		return template.selectOne("mybatis.getSeq");
 	}
 	
 	@Override
 	public List<AddressDTO> m20() {
-		// TODO Auto-generated method stub
-		List <AddressDTO> list = template.selectList("mybatis.m20");
+	
+		List<AddressDTO> list = template.selectList("mybatis.m20"); //부모 테이블
 		
-		for(AddressDTO dto : list) {
-		InfoDTO idto=	template.selectOne("mybatis.m20_info",dto.getSeq());
-		
-		dto.setInfo(idto);
+		for (AddressDTO dto : list) {
+			InfoDTO idto = template.selectOne("mybatis.m20_info", dto.getSeq());
+			dto.setInfo(idto); //자식 테이블
 		}
 		
-		return list; 
+		return list;
 	}
-
+	
 	@Override
 	public List<AddressDTO> m21() {
-	
-		
 		
 		return template.selectList("mybatis.m21");
 	}
+	
+	@Override
+	public List<AddressDTO> m22() {
+		
+		return template.selectList("mybatis.m22");
+	}
+	
 }
 
 

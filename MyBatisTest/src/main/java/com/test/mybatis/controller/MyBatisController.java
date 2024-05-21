@@ -272,97 +272,97 @@ public class MyBatisController {
 		
 		return "result";
 	}
-
+	
 	@GetMapping("/m16.do")
 	public String m16(Model model, MyBatisDTO dto) {
 		
+		//1개 이상의 조건 검색(다중 조건)
+		//- m16.do
+		//- m16.do?age=3
+		//- m16.do?gender=f
+		//- m16.do?gender=m&age=3
+		//- m16.do?gender=m&age=3&address=강남구
 		
-		//1개 이상의 조건 검색 
-		
-		// m16.do?seq=1
-		// m16.do?name=강아지
-		// m16.do?gender=m&age=3
-		// m16.do?gender=m&age=3*address=강남구
-		
-		//where 태그는 콘텐츠의 내용 중 'and' , 'or' 시작하면 그 'and' 와 'or'을 자동으로 삭제 해준다. (문맥에 맞춰서)
-		
+		//- <where> 태그는 콘텐츠의 내용 중 "and"나 "or"로 시작하면 그 "and"나 "or"를 자동으로 삭제한다.(문맥에 맞춰서)
+				
 		List<MyBatisDTO> list = dao.m16(dto);
 		
 		model.addAttribute("list", list);
-	
+		
 		return "result";
 	}
 	
-
 	@GetMapping("/m17.do")
 	public String m17(Model model, MyBatisDTO dto) {
 		
-		// <set> 수정할 때
-		// update tbladdress set 
+		//<set> : 수정할 때
+		//- update tblAddress set
 		
-		// m17.do?seq=1&gender=f
-		// m17.do?seq=1&age=5
-		// m17.do?seq=1&address=서울시 강남구 역삼동 우체국 빌딩&age=6
+		//- m17.do?seq=1&gender=f
+		//  > update tblAddress SET gender = 'f' where seq = '1' 
 		
+		//- m17.do?seq=1&age=5
+		//  > update tblAddress SET age = '5' where seq = '1' 
 		
-	dao.m17(dto);
+		//- m17.do?seq=1&address=서울시 강남구 역삼동 우체국 빌딩&age=6
+		//  > update tblAddress SET age = '6', address = '서울시 강남구 역삼동 우체국 빌딩' where seq = '1' 
+		
+		dao.m17(dto);
 		
 		model.addAttribute("list", new ArrayList<MyBatisDTO>());
 		
 		return "result";
 		
 	}
-
-
-
+	
 	@GetMapping("/m18.do")
 	public String m18(Model model, @RequestParam("name") List<String> name) {
-
-		//반복문
-		// m18.do
-		// m18.do?name=강아지
-		// m18.do?name=강아지&name=고양이&name=타조
 		
-		//System.out.println(name);
+		//반복문
+		//- m18.do
+		//- m18.do?name=강아지
+		//- m18.do?name=강아지&name=고양이&name=타조
+		
+		//System.out.println(name); //[강아지, 고양이, 타조]
 		
 		List<MyBatisDTO> list = dao.m18(name);
 		
+		model.addAttribute("list", list);
 		
-		
-		return "result";	
+		return "result";
 	}
+	
 	
 	@GetMapping("/m19.do")
 	public String m19(Model model, UserDTO udto, DetailDTO ddto) {
 		
-		//다중 쿼리 > selectKey 
-		// mapper는 한번에 한개의 SQL만 실행 가능하다. 
+		//다중 쿼리 > selectKey
+		//- mapper는 한번에 한개의 SQL만 실행 가능하다.
 		
-		// tblDetail > 회원(추가정보)
-		// tblUser > 회원 (기본정보)
+		//- tblUser   > 회원(기본정보)
+		//- tblDetail > 회원(추가정보)
 		
-		
-		//m19.do?name=홍길동&email=hong@test.com
-		//m19.do?name아무개&email=aaa@test.com
-		//m19.do?name=강아지
+		//- m19.do?name=홍길동&email=hong@test.com
+		//- m19.do?name=아무개&email=aaa@test.com
+		//- m19.do?name=강아지
 		
 //		dao.addUser(udto);
 //		String seq = dao.getSeq();
-		
 //		ddto.setUser_seq(seq);
-
 //		dao.addDetail(ddto);
-		
 		
 		
 		dao.addUser(udto);
 		ddto.setUser_seq(udto.getSeq());
 		dao.addDetail(ddto);
 		
+		//System.out.println(udto.getSeq());
 		
+		
+	
 		return "result";
 	}
-
+	
 	@GetMapping("/m20.do")
 	public String m20(Model model) {
 		
@@ -385,21 +385,27 @@ public class MyBatisController {
 	@GetMapping("/m21.do")
 	public String m21(Model model) {
 		
-		//Join 상황
-		//- 1:1
-		
-		//AddressDTO + InfoDTO
-		//select * from tblAddress a inner join tblInfo i on a.seq = i.seq
-		
-		//1. AddressDTO + InfoDTO = DTO
-		//2. AddressDTO(InfoDTO)
-		
 		List<AddressDTO> jlist = dao.m21();
 		
 		model.addAttribute("jlist", jlist);
 		
-		return "result";
+		return "result";		
 	}
+	
+	@GetMapping("/m22.do")
+	public String m22(Model model) {
+		
+		//1:N
+		//tblAddress + tblMemo
+		
+		List<AddressDTO> mlist = dao.m22();
+		
+		model.addAttribute("mlist", mlist);
+		
+		return "result";		
+	}
+
+	
 }
 
 

@@ -11,5 +11,15 @@ public class MemoDTO {
 	private String seq;
 	private String memo;
 	private String regdate;
-	private String aseq; //FK(tblAddress)
+	private String aseq; 	//FK(tblAddress)
 }
+
+
+
+
+
+
+
+
+
+
