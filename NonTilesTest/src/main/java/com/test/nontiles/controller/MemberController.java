@@ -11,19 +11,19 @@ public class MemberController {
 	@GetMapping("/info.do")
 	public String info() {
 		
-		return "member/info";
+		return "info";
 	}
 	
 	@GetMapping("/history.do")
 	public String history() {
 		
-		return "member/history";
+		return "history";
 	}
 	
 	@GetMapping("/favorite.do")
 	public String favorite() {
 		
-		return "member/favorite";
+		return "favorite";
 	}
 	
 }

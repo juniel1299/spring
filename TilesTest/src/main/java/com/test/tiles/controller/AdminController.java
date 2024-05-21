@@ -11,13 +11,13 @@ public class AdminController {
 	@GetMapping("/log.do")
 	public String log() {
 		
-		return "admin/log";
+		return "admin.log";
 	}
 	
 	@GetMapping("/setting.do")
 	public String setting() {
 		
-		return "admin/setting";
+		return "admin.setting";
 	}
 	
 }

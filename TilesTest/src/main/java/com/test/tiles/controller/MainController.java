@@ -12,6 +12,14 @@ public class MainController {
 		return "index";
 	}
 	
+	@GetMapping("/test.do")
+	public String test() {
+		
+		//Tiles 적용 > return 값 > JSP(X)
+		//                     > definition의 name값
+		return "test";
+	}
+	
 }
 
 

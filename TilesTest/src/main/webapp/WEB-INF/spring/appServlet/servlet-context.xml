@@ -20,12 +20,14 @@
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
-	<!-- <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
-		<beans:property name="prefix" value="/WEB-INF/views/" /> <beans:property 
-		name="suffix" value=".jsp" /> </beans:bean> -->
-
-
-	<!-- tiles -->
+	<!-- 
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean> 
+	-->
+	
 	<beans:bean id="tielsViewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<beans:property name="viewClass"
@@ -41,9 +43,14 @@
 			</beans:list>
 		</beans:property>
 	</beans:bean>
-	<context:component-scan
-		base-package="com.test.tiles" />
+
+	<context:component-scan base-package="com.test.tiles" />
 
 
 
 </beans:beans>
+
+
+
+
+

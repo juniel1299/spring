@@ -13,6 +13,7 @@ Spring Tiles
 - Templates: Spring MVC Project
 - Enter a topLevelPackage: "com.test.tiles"
 
+2. 의존성 추가
 
 
 
