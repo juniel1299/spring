@@ -6,7 +6,11 @@ import java.util.Map;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
+import com.test.mybatis.dto.AddressDTO;
+import com.test.mybatis.dto.DetailDTO;
+import com.test.mybatis.dto.InfoDTO;
 import com.test.mybatis.dto.MyBatisDTO;
+import com.test.mybatis.dto.UserDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -191,6 +195,47 @@ public class MyBatisDAOImpl implements MyBatisDAO {
 	public List<MyBatisDTO> m18(List<String> name) {
 		// TODO Auto-generated method stub
 		return template.selectList("mybatis.m18",name);
+	}
+	
+	@Override
+	public void addUser(UserDTO udto) {
+		// TODO Auto-generated method stub
+		
+		template.insert("mybatis.addUser",udto);
+	}
+	
+	@Override
+	public void addDetail(DetailDTO ddto) {
+		// TODO Auto-generated method stub
+		template.insert("mybatis.addDetail",ddto);
+	}
+	
+	@Override
+	public String getSeq() {
+		// TODO Auto-generated method stub
+		return template.selectOne("mybatis.getSeq");
+	}
+	
+	@Override
+	public List<AddressDTO> m20() {
+		// TODO Auto-generated method stub
+		List <AddressDTO> list = template.selectList("mybatis.m20");
+		
+		for(AddressDTO dto : list) {
+		InfoDTO idto=	template.selectOne("mybatis.m20_info",dto.getSeq());
+		
+		dto.setInfo(idto);
+		}
+		
+		return list; 
+	}
+
+	@Override
+	public List<AddressDTO> m21() {
+	
+		
+		
+		return template.selectList("mybatis.m21");
 	}
 }
 
