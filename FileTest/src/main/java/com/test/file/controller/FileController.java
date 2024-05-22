@@ -120,7 +120,7 @@ public class FileController {
 
 		String path = req.getRealPath("/resources/files");
 		Resource resource = new FileSystemResource(path + "\\" + filename);
-
+		System.out.println(path);
 		if (resource.exists() == false) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
