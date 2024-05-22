@@ -24,31 +24,31 @@ public class AOPDAOImpl implements AOPDAO {
 		dto2.setAge("2");
 		dto2.setColor("주황");
 		
-	
 		List<AOPDTO> list = new ArrayList<AOPDTO>();
 		list.add(dto1);
 		list.add(dto2);
 		
-		
+		System.out.println(list);
 		
 	}
 	
 	@Override
-	public void add() {
-		// TODO Auto-generated method stub
-	
+	public void add(AOPDTO dto) {
+		
+		System.out.println(dto);
 		
 	}
 	
 	@Override
 	public void view() {
-		// TODO Auto-generated method stub
+		
 		AOPDTO dto1 = new AOPDTO();
 		dto1.setName("강아지");
 		dto1.setAge("3");
 		dto1.setColor("검정");
 		
 		System.out.println(dto1);
+		
 	}
 
 }
