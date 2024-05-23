@@ -18,7 +18,7 @@ public class SocketServer {
 	//클라이언트가 메세지를 전송 > 서버가 수신할 때 발생
 	@OnMessage
 	public String handleMessage(String msg) {
-		System.out.println("클라이언트가 메세지를 보냈습니다 >>" + msg);
+		System.out.println("클라이언트가 메시지를 보냈습니다. >>> " + msg);
 		
 		return msg;
 	}
@@ -29,9 +29,23 @@ public class SocketServer {
 		System.out.println("클라이언트와 연결이 종료되었습니다.");
 	}
 	
-	//에러 발생 
+	//에러 발생
 	@OnError
 	public void handleError(Throwable e) {
-		System.out.println("에러 발생" + e.getMessage());
+		System.out.println("에러 발생: " + e.getMessage());
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

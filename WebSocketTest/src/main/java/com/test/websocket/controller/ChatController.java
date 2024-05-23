@@ -15,9 +15,24 @@ public class ChatController {
 	@GetMapping("/chat.do")
 	public String chat() {
 		
-		
 		return "chat";
 	}
 	
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

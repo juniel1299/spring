@@ -56,9 +56,7 @@
 			
 			//상대방이 나에게 메세지를 전달 > 내가 수신하는 순간 발생
 			ws.onmessage = evt => {
-				
-				log('서버로 부터 응답받은 데이터 >>>' + evt.data);
-				
+				log('서버로부터 응답받은 데이터 >>> ' + evt.data);
 			};
 			
 			ws.onclose = evt => {
@@ -73,27 +71,23 @@
 		});
 		
 		$('#btn-disconnect').click(() => {
-			
 			ws.close();
-			
 		});
-		
-		
 		
 		
 		function log(msg) {
 			$('.message.full').prepend(`<div>[\${new Date().toLocaleTimeString()}] \${msg}</div>`);
 		}
 		
-		$('#btn-echo').click(()=>{
+		$('#btn-echo').click(() => {
 			
 			//현재 연결되어 있는 서버측에게 데이터 전송하기
-			//ws.send('안녕하세요');
+			//ws.send('안녕하세요.');
 			ws.send($('#msg').val());
-			log('메세지를 전송했습니다.');
+			
+			log('메시지를 전송했습니다.');
 			
 		});
-		
 	
 	</script>
 </body>
