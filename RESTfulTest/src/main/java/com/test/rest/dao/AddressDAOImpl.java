@@ -14,40 +14,50 @@ import lombok.RequiredArgsConstructor;
 public class AddressDAOImpl implements AddressDAO {
 
 	private final SqlSessionTemplate template;
-
+	
 	@Override
 	public AddressDTO m1() {
-
+		
 		return template.selectOne("rest.m1");
 	}
-
+	
 	@Override
 	public int add(AddressDTO dto) {
-
+		
 		return template.insert("rest.add", dto);
 	}
-
+	
 	@Override
 	public List<AddressDTO> list() {
-
+		
 		return template.selectList("rest.list");
 	}
-
+	
 	@Override
 	public int edit(AddressDTO dto) {
-		// TODO Auto-generated method stub
+	
 		return template.update("rest.edit", dto);
 	}
-
+	
 	@Override
 	public int del(String seq) {
-		// TODO Auto-generated method stub
+		
 		return template.delete("rest.del", seq);
 	}
-
+	
 	@Override
 	public AddressDTO get(String seq) {
-		// TODO Auto-generated method stub
-		return template.selectOne("rest.get",seq);
+		
+		return template.selectOne("rest.get", seq);
 	}
+	
 }
+
+
+
+
+
+
+
+
+

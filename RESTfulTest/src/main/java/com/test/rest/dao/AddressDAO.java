@@ -19,3 +19,10 @@ public interface AddressDAO {
 	AddressDTO get(String seq);
 
 }
+
+
+
+
+
+
+
