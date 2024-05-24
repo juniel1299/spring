@@ -14,6 +14,14 @@
 	<!-- 로그인 성공 처리 핸들러 -->
 	<bean id="customLoginSuccess" class="com.test.security.auth.CustomLoginSuccessHandler"></bean>
 	
+	<!-- PasswordEncoder -->
+	<!-- <bean id="customPasswordEncoder" class="com.test.security.auth.CustomNoOpPasswordEncoder"></bean> -->
+	
+	<!-- PasswordEncoder : blowfish -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	
+	<!-- 유저 정보 객체 -->
+	<bean id="customUserDetailsService" class="com.test.security.auth.CustomUserDetailsService"></bean>
 	
 	
 	<!-- 16.
@@ -55,14 +63,11 @@
 	
 	<!-- 21. 인증 관련 설정 -->
 	<security:authentication-manager>
-		<security:authentication-provider>
-			<security:user-service>
-				<!-- 계정(사용자) -->
-				<!-- <security:user name="hong" password="1111" authorities="ROLE_MEMBER"/> -->
-				<security:user name="hong" password="{noop}1111" authorities="ROLE_MEMBER"/>
-				<security:user name="admin" password="{noop}1111" authorities="ROLE_MEMBER,ROLE_ADMIN"/>
-			</security:user-service>
+	
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+			<security:password-encoder ref="bcryptPasswordEncoder" />
 		</security:authentication-provider>
+		
 	</security:authentication-manager>
 
 </beans>
