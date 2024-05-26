@@ -8,8 +8,13 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="equals"/>
 			<item value="myba"/>
+			<item value="hika"/>
+			<item value="log4j"/>
+			<item value="zax"/>
+			<item value="lom"/>
+			<item value="juni"/>
+			<item value="equals"/>
 			<item value="junit"/>
 			<item value="sour"/>
 			<item value="discon"/>
@@ -18,11 +23,6 @@
 			<item value="랴"/>
 			<item value="alert"/>
 			<item value="iuhjbubpiy jiupjobn9puoinn09inhunoi"/>
-			<item value="child"/>
-			<item value="sco"/>
-			<item value="anno"/>
-			<item value="servlet"/>
-			<item value="ajax"/>
 		</list>
 		<list key="replacehistory">
 		</list>
